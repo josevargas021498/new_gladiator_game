@@ -73,8 +73,8 @@ function viewG2Buttons() {
     }
 }
 
-var gladiator_1 = createGladiator('Jose', 100, 25);
-var gladiator_2 = createGladiator('Liza', 100, 25);
+var gladiator_1 = createGladiator('Jose', 200, 25);
+var gladiator_2 = createGladiator('Liza', 200, 25);
 
 function viewGladiator1() {
     return [
@@ -118,7 +118,7 @@ function buttonAttHandler() {
     $('#kick2').click(function() {
         if (gladiator_2.rage >= 30) {
             gladiator_2.rage -= 30;
-            gladiator_2.rage += 23;
+            gladiator_2.rage += 24;
             gladiator_1.health -= 45;
             STATE.updates =
                 gladiator_1.name +
@@ -182,8 +182,17 @@ function buttonAttHandler() {
             draw();
         }
     });
+    $('#grito2').click(function() {
+        if (gladiator_2.rage >= 85) {
+            gladiator_2.rage += 52;
+            gladiator_1.health -= 73;
+            STATE.updates = 'Hit Of 73 Points!';
+            STATE.turn = 1;
+            draw();
+        }
+    });
     $('#heal').click(function() {
-        if (gladiator_1.health < 100 && gladiator_1.rage >= 17) {
+        if (gladiator_1.health < 200 && gladiator_1.rage >= 10) {
             gladiator_1.health += 17;
             gladiator_1.rage -= 10;
             STATE.updates =
@@ -197,7 +206,7 @@ function buttonAttHandler() {
     });
 
     $('#heal2').click(function() {
-        if (gladiator_2.health < 100 && gladiator_2.rage >= 17) {
+        if (gladiator_2.health < 200 && gladiator_2.rage >= 10) {
             gladiator_2.health += 17;
             gladiator_2.rage -= 10;
             STATE.updates =
