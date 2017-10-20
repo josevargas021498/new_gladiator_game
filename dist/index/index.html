@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <title>Gladiator Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        h2 {
+            color: black;
+            font-family: 'Nosifer', cursive;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: red;
+        }
+
+        h2:hover {
+            color: red;
+        }
+
+        h3 {
+            color: red;
+            font-family: 'Nosifer', cursive;
+        }
+
+        h4 {
+            font-family: 'Nosifer', cursive;
+            color: white;
+        }
+
+        body {
+            background: url('button.jpg');
+            background-attachment: fixed;
+            color: white;
+        }
+
+        button {
+            border-radius: 45px;
+            width: 29em;
+            height: 1.6em;
+            font-family: 'Nosifer', cursive;
+            color: red;
+            background: url('war.jpg');
+            -webkit-transition: width 0.90s, height 0.90s;
+            transition: width 0.90s, height 0.90;
+        }
+
+        button:hover {
+            width: 33em;
+            height: 6em;
+            background: url('buttonhover.jpg') center;
+            color: black;
+            -webkit-text-stroke-color: red;
+            -webkit-text-stroke-width: 1.5px;
+        }
+
+        h1 {
+            font-size: 5em;
+            padding: 40px;
+            background-color: black;
+            border-radius: 8em;
+            text-align: center;
+            font-family: 'Nosifer', cursive;
+            color: red;
+            margin-left: 5px;
+            height: 20%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: ಠ_ಠ 0.50s infinite alternate ease-in-out -50.5s;
+            animation-fill-mode: forwards;
+            transform: rotateY(-10deg) rotateX(-20deg) translateZ(0);
+            margin-top: 50px;
+        }
+
+        @keyframes ಠ_ಠ {
+            100% {
+                transform: rotateY(-5deg) rotateX(-5deg);
+            }
+        }
+    </style>
+
+    <h1 class="col-lg-12"> JoSe'S GlAdIaToR GaMe!</h1>
+
+    <div class='container' id="app">
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
