@@ -10430,126 +10430,108 @@ function viewGladiator2() {
 }
 
 function buttonAttHandler() {
-    $('#kick').click(function() {
+    $('#kick').click(function () {
         if (gladiator_1.rage >= 30) {
+            hitPoints = Math.floor(Math.random() * 45);
             gladiator_1.rage -= 30;
             gladiator_1.rage += 23;
-            gladiator_2.health -= 45;
-            STATE.updates =
-                gladiator_2.name +
-                '   --- 45 Health       //      ' +
-                gladiator_1.name +
-                '   +++25 Rage ';
+            gladiator_2.health -= hitPoints;
+            STATE.updates = "<h4> Hit Of " + hitPoints + " Points! </h4>";
             STATE.turn = 2;
 
             draw();
         }
     });
 
-    $('#kick2').click(function() {
+    $('#kick2').click(function () {
         if (gladiator_2.rage >= 30) {
+            hitPoints = Math.floor(Math.random() * 45);
             gladiator_2.rage -= 30;
             gladiator_2.rage += 24;
-            gladiator_1.health -= 45;
-            STATE.updates =
-                gladiator_1.name +
-                '   --- 45 Health       //      ' +
-                gladiator_2.name +
-                '   +++25 Rage ';
+            gladiator_1.health -= hitPoints;
+            STATE.updates = "<h4> Hit Of " + hitPoints + " Points! </h4>";
             STATE.turn = 1;
 
             draw();
         }
     });
-    $('#punch').click(function() {
+    $('#punch').click(function () {
         gladiator_1.rage += 15;
-        gladiator_2.health -= 21;
-        STATE.updates =
-            gladiator_2.name +
-            '   ---30 Health' +
-            gladiator_1.name +
-            '+++ 15 Rage    ';
+        hitPoints = Math.floor(Math.random() * 25);
+        gladiator_2.health -= hitPoints;
+        STATE.updates = "<h4> Hit Of " + hitPoints + " Points! </h4>";
         STATE.turn = 2;
         draw();
     });
-    $('#punch2').click(function() {
+    $('#punch2').click(function () {
         gladiator_2.rage += 15;
-        gladiator_1.health -= 21;
-        STATE.updates =
-            gladiator_1.name +
-            '   ---26 Health' +
-            gladiator_2.name +
-            '+++ 15 Rage    ';
+        hitPoints = Math.floor(Math.random() * 25);
+        gladiator_1.health -= hitPoints;
+        STATE.updates = "<h4> Hit Of " + hitPoints + " Points! </h4>";
         STATE.turn = 1;
         draw();
     });
 
-    $('#gusano').click(function() {
+    $('#gusano').click(function () {
         if (gladiator_1.rage >= 55) {
+            hitPoints = Math.floor(Math.random() * 80);
             gladiator_1.rage += 40;
-            gladiator_2.health -= 73;
-            STATE.updates = 'Hit Of 73 Points';
+            gladiator_2.health -= hitPoints;
+            STATE.updates = '<h4> Hit Of ' + hitPoints + ' Points! </h4>';
             STATE.turn = 2;
             draw();
         }
     });
 
-    $('#gusano2').click(function() {
+    $('#gusano2').click(function () {
         if (gladiator_2.rage >= 55) {
+            hitPoints = Math.floor(Math.random() * 80);
             gladiator_2.rage += 40;
-            gladiator_1.health -= 61;
-            STATE.updates = 'Hit Of 61 Points';
+            gladiator_1.health -= hitPoints;
+            STATE.updates = '<h4> Hit Of ' + hitPoints + ' Points! </h4>';
             STATE.turn = 1;
             draw();
         }
     });
 
-    $('#grito').click(function() {
+    $('#grito').click(function () {
         if (gladiator_1.rage >= 85) {
             gladiator_1.rage += 52;
             gladiator_2.health -= 73;
-            STATE.updates = 'Hit Of 73 Points!';
+            STATE.updates = '<h4> Hit Of 73 Points! </h4>';
             STATE.turn = 2;
             draw();
         }
     });
-    $('#grito2').click(function() {
+    $('#grito2').click(function () {
         if (gladiator_2.rage >= 85) {
             gladiator_2.rage += 52;
             gladiator_1.health -= 73;
-            STATE.updates = 'Hit Of 73 Points!';
+            STATE.updates = '<h4> Hit Of 73 Points! </h4>';
             STATE.turn = 1;
             draw();
         }
     });
-    $('#heal').click(function() {
+    $('#heal').click(function () {
         if (gladiator_1.health < 200 && gladiator_1.rage >= 10) {
             gladiator_1.health += 17;
             gladiator_1.rage -= 10;
-            STATE.updates =
-                gladiator_1.name +
-                '    +++ 10 Health //   ' +
-                gladiator_1.name +
-                '  --- 5 Rage   ';
+            STATE.updates = gladiator_1.name + "<h4> Healed 17 Points! </h4>";
             STATE.turn = 2;
             draw();
         }
     });
 
-    $('#heal2').click(function() {
+    $('#heal2').click(function () {
         if (gladiator_2.health < 200 && gladiator_2.rage >= 10) {
             gladiator_2.health += 17;
             gladiator_2.rage -= 10;
-            STATE.updates =
-                gladiator_2.name +
-                '    +++ 10 Health //   ' +
-                gladiator_2.name +
-                '  --- 5 Rage   ';
+            STATE.updates = gladiator_2 + "<h4> Healed 17 Points! </h4>";
             STATE.turn = 1;
             draw();
         }
     });
-    $('#conserve').click(function() {
+    $('#conserve').click(function () {
         if (gladiator_1.rage >= 5) {
             gladiator_1.rage -= 5;
             gladiator_1.rage += 25;
@@ -10562,7 +10544,7 @@ function buttonAttHandler() {
             draw();
         }
     });
-    $('#conserve2').click(function() {
+    $('#conserve2').click(function () {
         if (gladiator_2.rage >= 5) {
             gladiator_2.rage -= 5;
             gladiator_2.rage += 25;
@@ -10580,16 +10562,16 @@ function buttonAttHandler() {
 function G1IsDead() {
     appRoot.html(
         '<button onclick="document.location.reload()">' +
-            gladiator_1.name +
-            ', YOU DIED! </br> Click Here To Restart! </button>'
+        gladiator_1.name +
+        ', YOU DIED! </br> Click Here To Restart! </button>'
     );
 }
 
 function G2IsDead() {
     appRoot.html(
         '<button onclick="document.location.reload()">' +
-            gladiator_2.name +
-            ', YOU DIED! </br>Click Here To Restart! </button>'
+        gladiator_2.name +
+        ', YOU DIED! </br>Click Here To Restart! </button>'
     );
 }
 
@@ -10600,17 +10582,18 @@ function isDead() {
         G2IsDead();
     }
 }
+
 function draw() {
     appRoot.html(viewGladiator1() + viewGladiator2());
     buttonAttHandler();
     isDead();
 }
+
 function main() {
     draw();
 }
 
 $(main);
-
 
 /***/ }),
 /* 4 */
